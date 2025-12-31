@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 from dash import Dash, dcc, html, dash_table
 
-df = pd.read_csv('/Users/priyankam/Documents/Amazon/amazon_order_jun_2024_may_2025.csv')
+df = pd.read_csv('/Users/nivasm/Documents/Amazon/amazon_order_jun_2024_may_2025.csv')
 df['Total Owed'] = df['Total Owed'].astype(str).str.replace(r'[\u20B9,]', '', regex=True).str.strip()
 df['Total Owed'] = pd.to_numeric(df['Total Owed'], errors='coerce')
 df = df.dropna(subset=['Total Owed'])
